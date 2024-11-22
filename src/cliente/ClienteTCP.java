@@ -1,16 +1,25 @@
 package cliente;
 
+import java.io.BufferedReader;
+import java.io.PrintStream;
+import java.net.Socket;
+
 /**
- * TODO: Complementa esta clase para que genere la conexión TCP con el servidor
+ * TODO: Complementa esta clase para que genere la conexiï¿½n TCP con el servidor
  * para enviar un boleto, recibir la respuesta y finalizar la sesion
  */
 public class ClienteTCP {
+	// Socket
+	private Socket client;
+	// IO
+	private BufferedReader inbound;
+	private PrintStream outbound;
 
 	/**
 	 * Constructor
 	 */
 	public ClienteTCP(String ip, int puerto) {
-
+		
 	}
 
 	/**
@@ -23,10 +32,10 @@ public class ClienteTCP {
 	}
 
 	/**
-	 * Sirve para finalizar la la conexión de Cliente y Servidor
+	 * Sirve para finalizar la la conexiï¿½n de Cliente y Servidor
 	 */
-	public void finSesion () {
-		
+	public void finSesion() {
+
 	}
-	
+
 }
