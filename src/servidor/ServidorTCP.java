@@ -98,12 +98,13 @@ public class ServidorTCP {
 		// Comprobamos el nº de aciertos totales
 		for (String num : clientCombi) {// Recorremos la combinacion de cliente
 			int numberClient = Integer.parseInt(num);// Pasamos el String a int
+			
 			for (int winningNum : combinacion) {// Bucle anidado para comparar el billete con el nº premiado
 				if (numberClient == winningNum) {
+					aciertos++;// Sumamos cada acierto
 					if (numberClient == complementario) {// Si algun nº del boleto coincide con el complementario:
 						hasComplementario = true;
 					}
-					aciertos++;// Sumamos cada acierto
 				}
 			}
 		}
@@ -115,7 +116,7 @@ public class ServidorTCP {
 				res = respuesta[1];// Respuesta nº inválidos
 			}
 		}
-		// nº repetidos
+		// Si la algún nº tiene repetidos
 		// Treeset: asignamos el array al mismo ya que no admite duplicados
 		TreeSet<Integer> numsBoleto = new TreeSet<Integer>();
 		boolean hasRepetido = false;
@@ -150,6 +151,7 @@ public class ServidorTCP {
 				res = respuesta[7];
 			}
 		}
+		//5 aciertos y complementario
 		if (aciertos == 5 && hasComplementario) {
 			res = respuesta[3];
 		}
