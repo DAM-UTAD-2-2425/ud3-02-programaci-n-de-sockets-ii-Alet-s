@@ -1,5 +1,6 @@
 package servidor;
 
+/** @author Alejandro Serrano, Pedro Camacho */
 public class PrimitivaServidor {
 
 	public static void main(String[] args) {
@@ -8,11 +9,11 @@ public class PrimitivaServidor {
 		String respuesta;
 		do {
 			linea = canal.leerCombinacion();
-			respuesta = canal.comprobarBoleto ();
-			canal.enviarRespuesta (respuesta);
+			respuesta = canal.comprobarBoleto(linea);
+			canal.enviarRespuesta(respuesta);
 		} while (!linea.equals("FIN"));
 		canal.finSesion();
-		
+
 	}
 
 }
